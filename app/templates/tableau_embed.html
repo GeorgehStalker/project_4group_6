@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Tableau - Board Game Theme</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #fff8db; /* Light blue background */
+            font-family: 'Arial', sans-serif; /* Font for the page */
+            color: #3e2723; /* Dark brown text color */
+        }
+
+        .card {
+            margin-top: 25px; 
+            margin-bottom: 25px; 
+            border: 3px solid #ffcc00; /* Bright yellow border */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        h1 {
+            text-align: center; /* Center the main title */
+            font-size: 2.5em; /* Large title size */
+            margin-bottom: 20px; /* Space below the title */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Title shadow */
+        }
+
+        h3 {
+            text-align: center; /* Center the toolbar title */
+            margin-bottom: 20px; /* Space below the title */
+        }
+
+        .toolbar {
+            display: flex; /* Flexbox for the toolbar */
+            justify-content: center; /* Center the buttons */
+            gap: 10px; /* Space between buttons */
+        }
+
+        .btn {
+            border-radius: 10px; /* Rounded button corners */
+        }
+
+        #tableauParent {
+            text-align: center; /* Center the Tableau container */
+            margin-top: 20px; /* Space above the Tableau viz */
+        }
+
+        #tableauViz {
+            height: 700px; /* Height of the Tableau viz */
+            border: 2px solid #ff9800; /* Orange border around Tableau */
+            border-radius: 10px; /* Rounded corners for Tableau */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+    </style>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Tableau JavaScript API -->
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.8.0.min.js"></script>
+</head>
+<body>
+
+    <div class="card container-fluid">
+        <h1>Embedded Tableau Dashboard</h1>
+    </div>
+
+    <div class="card container-fluid">
+        <h3>Toolbar</h3>
+        <div class="toolbar">
+            <button type="button" class="btn btn-primary" id="pdf">PDF</button>
+            <button type="button" class="btn btn-primary" id="image">Image</button>
+            <button type="button" class="btn btn-primary" id="crosstab">Crosstab</button>
+            <button type="button" class="btn btn-primary" id="data">Data</button>
+            <button type="button" class="btn btn-danger" id="revert">Revert</button>
+        </div>
+    </div>
+
+    <!-- The div where we will inject our Tableau -->
+    <div id="tableauParent" class="container-fluid">
+        <div id="tableauViz"></div>
+    </div>
+
+    <script type="text/javascript">
+        // Define the Tableau viz variable globally
+        var viz;
+
+        // Function to initialize Tableau Viz
+        function initViz() {
+            var containerDiv = document.getElementById("tableauViz");
+            var url = "https://public.tableau.com/views/Boardgame_17276698915800/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link";
+
+            var options = {
+                hideTabs: true,
+                hideToolbar: true,
+                onFirstInteractive: function () {
+                    console.log("Tableau Viz has loaded successfully.");
+                }
+            };
+
+            viz = new tableau.Viz(containerDiv, url, options);
+        }
+
+        // Load Tableau viz when the page is ready
+        $(document).ready(function () {
+            initViz();
+
+            // Toolbar button functionality
+            $("#pdf").click(function () {
+                viz.showExportPDFDialog();
+            });
+
+            $("#image").click(function () {
+                viz.showExportImageDialog();
+            });
+
+            $("#crosstab").click(function () {
+                viz.showExportCrossTabDialog();
+            });
+
+            $("#data").click(function () {
+                viz.showExportDataDialog();
+            });
+
+            $("#revert").click(function () {
+                viz.revertAll();
+            });
+        });
+    </script>
+
+</body>
+</html>

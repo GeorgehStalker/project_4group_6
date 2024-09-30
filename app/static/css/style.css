@@ -1,0 +1,204 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font for a board game theme */
+  }
+  
+  body {
+    background-color: #fff8db; /* Light yellowish background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  header {
+    background-color: #d19c40; /* Rich golden-yellow color */
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    border-bottom: 5px solid #ba7a2a; /* Gives a wooden border effect */
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px #ba7a2a; /* Slight shadow for a vintage effect */
+  }
+  
+  header .subtitle {
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: #f5e4c4; /* Subtle yellow shade for subtitle */
+  }
+  
+  /* Main Content */
+  main {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #fff8db; /* Softer yellow */
+    border-radius: 12px;
+    border: 2px dashed #ba7a2a; /* Board-game-like dashed borders */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #d19c40;
+    color: #ba7a2a;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 5px solid #ba7a2a;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Game Board Styling */
+  .board {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 10px solid #ba7a2a; /* Thick wooden-style border */
+    border-radius: 25px;
+    background: radial-gradient(circle, #ffe7c2, #f2b94b); /* Gradient resembling game board */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 3rem;
+    color: #2e3a43;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px #ba7a2a; /* Heavier shadow for a classic board-game logo feel */
+  }
+  
+  /* Game Area */
+  .game-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .square {
+    background-color: #fff;
+    border: 3px solid #2e3a43;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    height: 120px;
+    transition: transform 0.2s, background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .square:hover {
+    transform: scale(1.15);
+    background-color: #f9d566; /* Brighter yellow on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  #start {
+    background-color: #b0e57c; /* Soft green for start square */
+  }
+  
+  #finish {
+    background-color: #e57373; /* Red for finish square */
+  }
+  
+  /* Buttons */
+  .action-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    font-size: 1.7rem;
+    color: #fff;
+    background-color: #e0a458;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .action-button:hover {
+    background-color: #ba7a2a; /* Darker yellow-gold on hover */
+    transform: scale(1.1);
+  }
+  
+  /* Profiles */
+  .profiles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .profile {
+    background-color: #fff8db; /* Light yellowish profile cards */
+    border: 3px solid #2e3a43;
+    border-radius: 15px;
+    width: 220px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  .profile:hover {
+    transform: scale(1.08);
+    background-color: #ffdf80; /* Yellowish tint on hover */
+  }
+  
+  .profile-image img {
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    margin-bottom: 15px;
+    border: 3px solid #ba7a2a; /* Gold frame for profile images */
+  }
+
+
+  /*tableau css*/
+  body {
+    background-color: #fff8db; /* Light background */
+    font-family: Arial, sans-serif; /* Font styling */
+  }
+
+  /* Card styling */
+  .card {
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  /* Button styling */
+  .btn {
+    margin: 5px; /* Spacing around buttons */
+  }
+
+  /* Customize the heading */
+  h1 {
+    color: #ba7a2a; /* Bootstrap primary color */
+  }
+
+  h3 {
+    color: #343a40; /* Darker text for headings */
+  }
