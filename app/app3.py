@@ -23,7 +23,7 @@ def tableau():
     # Return template and data
     return render_template("../app/templates/tableau_embed.html")
 
-@app.route("/makePredictions", methods=["POST"])
+@app.route("/Predictions", methods=["POST"])
 def make_predictions():
     content = request.json["data"]
     print(content)
