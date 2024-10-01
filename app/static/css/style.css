@@ -202,3 +202,31 @@
   h3 {
     color: #343a40; /* Darker text for headings */
   }
+  /* Add this CSS to your style.css file for navigation styling */
+  nav {
+    background-color: #d19c40; /* Match header/footer color */
+    padding: 10px;
+  }
+      
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    margin: 0;
+    padding: 0;
+  }
+      
+  nav li {
+    margin: 0 15px; /* Spacing between items */
+  }
+      
+  nav a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Link color */
+    font-weight: bold; /* Bold text */
+  }
+      
+  nav a:hover {
+    color: #ba7a2a; /* Darker gold on hover */
+    text-decoration: underline; /* Underline on hover */
+  }

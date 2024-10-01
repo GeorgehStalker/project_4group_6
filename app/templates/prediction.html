@@ -4,36 +4,114 @@
 <head>
     <meta charset="utf-8">
     <title>TITANIC ML</title>
-    <!-- Boostrap -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <!-- JQuery -->
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- JS -->
     <script type="text/javascript" src="static/js/logic.js"></script>
 
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            text-align: center; /* Center text globally */
+        }
+
+        nav {
+            background-color: #d19c40; /* Match header/footer color */
+            padding: 5px; /* Adjust padding */
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 10px; /* Reduce spacing between items */
+        }
+
+        nav a {
+            text-decoration: none; /* Remove underline */
+            color: #fff; /* Link color */
+            font-weight: bold; /* Bold text */
+        }
+
+        nav a:hover {
+            color: #ba7a2a; /* Darker gold on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        hr {
+            color: lightgray;
+            border-width: 3px;
+        }
+
+        header {
+            margin-top: 10px; /* Adjust header margin */
+        }
+
+        .container {
+            display: flex; /* Enable flexbox */
+            justify-content: center; /* Center content */
+            margin: 10px auto; /* Center the container and adjust margin */
+            max-width: 600px; /* Set a max width for the container */
+        }
+
+        .card {
+            width: 100%; /* Full width of the container */
+            max-width: 400px; /* Set a max width for the card */
+        }
+
+        footer {
+            text-align: center; /* Center footer text */
+            margin-top: 20px; /* Adjust footer margin */
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Titanic
-                <span class="sr-only">(current)</span>
-              </a>
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <a href="/about_us">About Us</a>
-    <hr style="color:lightgray; border-width: 3px;">
+
+    <header>
+        <h1>Board Game Recommender</h1>
+        <p class="subtitle">"Because finding your next favorite game shouldn't be a roll of the dice!"</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html">Game Recommender</a></li>
+            <li><a href="tableau_1.html">Category & Mechanic</a></li>
+            <li><a href="tableau_2.html">Playtime</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
     <div class="container">
         <div class="card border-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Filters</div>
@@ -42,7 +120,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="col-form-label" for="gender">Gender</label>
-                            <select id="gender">
+                            <select id="gender" class="form-control">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select>
@@ -63,7 +141,7 @@
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="pclass">Passenger Class</label>
-                            <select id="pclass">
+                            <select id="pclass" class="form-control">
                                 <option value="1">First Class</option>
                                 <option value="2">Second Class</option>
                                 <option value="3">Third Class</option>
@@ -71,7 +149,7 @@
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="embarked">Embarked Port</label>
-                            <select id="embarked">
+                            <select id="embarked" class="form-control">
                                 <option value="C">Cherbourg</option>
                                 <option value="Q">Queenstown</option>
                                 <option value="S">Southampton</option>
@@ -79,7 +157,7 @@
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="has_cabin">Has Cabin?</label>
-                            <select id="has_cabin">
+                            <select id="has_cabin" class="form-control">
                                 <option value="True">Yes</option>
                                 <option value="False">No</option>
                             </select>
@@ -94,7 +172,9 @@
             </div>
         </div>
     </div>
-    <hr style="color:lightgray; border-width: 3px;">
+
+    <hr>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -103,6 +183,9 @@
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2024 Board Game Recommender Project</p>
+    </footer>
 </body>
 
 </html>
