@@ -102,11 +102,11 @@
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="prediction.html">Game Recommender</a></li>
-            <li><a href="tableau_1.html">Category & Mechanic</a></li>
-            <li><a href="tableau_2.html">Playtime</a></li>
-            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/prediction">Game Recommender</a></li>
+            <li><a href="/tableau_1">Category & Mechanic</a></li>
+            <li><a href="/tableau_2">Playtime</a></li>
+            <li><a href="/about_us">About Us</a></li>
         </ul>
     </nav>
 
@@ -118,20 +118,20 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label class="col-form-label" for="gender">Gender</label>
                             <select id="gender" class="form-control">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select>
+                        </div> -->
+                        <div class="form-group">
+                            <label class="col-form-label" for="min_playtime">min_playtime</label>
+                            <input type="number" class="form-control" value="25" id="min_playtime">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="age">Age</label>
-                            <input type="text" class="form-control" value="25" id="age">
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label" for="fare">Fare</label>
-                            <input type="text" class="form-control" value="25.50" id="fare">
+                            <label class="col-form-label" for="max_playtime">max_playtime</label>
+                            <input type="number" class="form-control" value="25.50" id="max_playtime">
                         </div>
                     </div>
                     <div class="col-md-6">
