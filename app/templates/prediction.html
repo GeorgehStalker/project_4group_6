@@ -118,49 +118,35 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- <div class="form-group">
-                            <label class="col-form-label" for="gender">Gender</label>
-                            <select id="gender" class="form-control">
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
-                            </select>
-                        </div> -->
+                        <div class="form-group">
+                            <label class="col-form-label" for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter a name">
+                        </div>                        
                         <div class="form-group">
                             <label class="col-form-label" for="min_playtime">min_playtime</label>
                             <input type="number" class="form-control" value="25" id="min_playtime">
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="max_playtime">max_playtime</label>
-                            <input type="number" class="form-control" value="25.50" id="max_playtime">
+                            <input type="number" class="form-control" value="26" id="max_playtime">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="col-form-label" for="familySize">Family Size</label>
-                            <input type="text" class="form-control" value="2" id="familySize">
+                            <label class="col-form-label" for="age">age</label>
+                            <input type="number" class="form-control" value="5" id="age">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="pclass">Passenger Class</label>
-                            <select id="pclass" class="form-control">
-                                <option value="1">First Class</option>
-                                <option value="2">Second Class</option>
-                                <option value="3">Third Class</option>
-                            </select>
+                            <label class="col-form-label" for="min_players">min_players</label>
+                            <input type="number" class="form-control" value="1" id="min_players">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="embarked">Embarked Port</label>
-                            <select id="embarked" class="form-control">
-                                <option value="C">Cherbourg</option>
-                                <option value="Q">Queenstown</option>
-                                <option value="S">Southampton</option>
-                            </select>
+                            <label class="col-form-label" for="max_players">max_players</label>
+                            <input type="number" class="form-control" value="25" id="max_players">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="has_cabin">Has Cabin?</label>
-                            <select id="has_cabin" class="form-control">
-                                <option value="True">Yes</option>
-                                <option value="False">No</option>
-                            </select>
+                            <label class="col-form-label" for="avg_rating">avg_rating</label>
+                            <input type="number" class="form-control" value="5" id="avg_rating">
                         </div>
                     </div>
                 </div>
@@ -178,8 +164,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 id="output"></h1>
+                <h2 id="output"></h2>
             </div>
+        </div>
+        <div class="row"id="Results">
+
         </div>
     </div>
 
