@@ -1,13 +1,11 @@
 from flask import Flask, render_template, redirect, request, jsonify
-import pickle
-import pandas as pd
-# from modelHelper import ModelHelper
+from modelHelper import ModelHelper
 
 # Create an instance of Flask
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-# modelHelper = ModelHelper()
+modelHelper = ModelHelper()
 
 # Route to render index.html template using data from Mongo
 @app.route("/")
@@ -20,59 +18,27 @@ def about_us():
     # Return template and data
     return render_template("about_us.html")
 
-@app.route("/tableau_1")
-def tableau_1():
+@app.route("/tableau")
+def tableau():
     # Return template and data
-    return render_template("tableau_1.html")
+    return render_template("../app/templates/tableau_embed.html")
 
-
-@app.route("/tableau_2")
-def tableau_2():
-    # Return template and data
-    return render_template("tableau_2.html")
-
-@app.route("/prediction")
-def prediction():
-    # Return template and data
-    return render_template("prediction.html")
-
-
-def makePredictions(sex_flag, age, fare, familySize, p_class, embarked, has_cabin):
-    # create dataframe of one row for inference
-    df = pd.DataFrame()
-    df["Sex"] = [sex_flag]
-    df["Age"] = [age]
-    df["Fare"] = [fare]
-    df["Has_Cabin"] = [has_cabin]
-    df["Family_Size"] = [familySize]
-    df["Pclass"] = [p_class]
-    df["Embarked"] = [embarked]
-
-    # model
-    model = pickle.load(open("h5here.h5", 'rb'))
-
-    # columns in order
-    df = df.loc[:, ['Pclass', 'Sex', 'Age', 'Fare', 'Embarked', 'Has_Cabin', 'Family_Size']]
-
-    preds = model.predict_proba(df)
-    return(preds[0][1])
-@app.route("/predictions", methods=["POST"])
-def predictions():
+@app.route("/Predictions", methods=["POST"])
+def make_predictions():
     content = request.json["data"]
     print(content)
-    # return(jsonify({"ok": True}))
 
-    # # parse
-    # sex_flag = content["sex_flag"]
-    # age = float(content["age"])
-    # fare = float(content["fare"])
-    # familySize = int(content["familySize"])
-    # p_class = int(content["p_class"])
-    # embarked = content["embarked"]
-    # has_cabin = bool(int(content["has_cabin"]))
+    # parse
+    sex_flag = content["sex_flag"]
+    age = float(content["age"])
+    fare = float(content["fare"])
+    familySize = int(content["familySize"])
+    p_class = int(content["p_class"])
+    embarked = content["embarked"]
+    has_cabin = bool(int(content["has_cabin"]))
 
-    # preds = modelHelper.makePredictions(sex_flag, age, fare, familySize, p_class, embarked, has_cabin)
-    # return(jsonify({"ok": True, "prediction": str(preds)}))
+    preds = modelHelper.makePredictions(sex_flag, age, fare, familySize, p_class, embarked, has_cabin)
+    return(jsonify({"ok": True, "prediction": str(preds)}))
 
 
 #############################################################

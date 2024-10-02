@@ -9,13 +9,6 @@ $(document).ready(function() {
 
 // call Flask API endpoint
 function makePredictions() {
-//     gamelist_length = 10
-// max_players = 4
-// max_playtime = 120
-// min_age = 5
-// min_players = 3
-// min_playtime = 60
-// average_rating = 5
     var sex_flag = $("#gender").val();
     var age = $("#age").val();
     var fare = $("#fare").val();
@@ -38,7 +31,7 @@ function makePredictions() {
     // Perform a POST request to the query URL
     $.ajax({
         type: "POST",
-        url: "/predictions",
+        url: "/makePredictions",
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify({ "data": payload }),
         success: function(returnedData) {
