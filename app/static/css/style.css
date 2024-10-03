@@ -230,3 +230,140 @@
     color: #ba7a2a; /* Darker gold on hover */
     text-decoration: underline; /* Underline on hover */
   }
+    /* Centering the navigation */
+    nav {
+      text-align: center; /* Center the text in the nav */
+      margin-bottom: 20px; /* Space below the nav */
+  }
+  nav ul {
+      list-style-type: none; /* Remove bullet points from the list */
+      padding: 0; /* Remove default padding */
+  }
+  nav ul li {
+      display: inline; /* Display list items in a line */
+      margin: 0 15px; /* Space between links */
+  }
+  nav ul li a {
+      text-decoration: none; /* Remove underline from links */
+      color: black; /* Link color */
+  }
+  
+  body {
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      text-align: center; /* Center text globally */
+  }
+
+  nav {
+      background-color: #d19c40; /* Match header/footer color */
+      padding: 5px; /* Adjust padding */
+  }
+
+  nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center; /* Center the nav items */
+      margin: 0;
+      padding: 0;
+  }
+
+  nav li {
+      margin: 0 10px; /* Reduce spacing between items */
+  }
+
+  nav a {
+      text-decoration: none; /* Remove underline */
+      color: #fff; /* Link color */
+      font-weight: bold; /* Bold text */
+  }
+
+  nav a:hover {
+      color: #ba7a2a; /* Darker gold on hover */
+      text-decoration: underline; /* Underline on hover */
+  }
+
+  hr {
+      color: lightgray;
+      border-width: 3px;
+  }
+
+  header {
+      margin-top: 10px; /* Adjust header margin */
+  }
+
+  .container {
+      display: flex; /* Enable flexbox */
+      justify-content: center; /* Center content */
+      margin: 10px auto; /* Center the container and adjust margin */
+      max-width: 600px; /* Set a max width for the container */
+  }
+
+  .card {
+      width: 100%; /* Full width of the container */
+      max-width: 400px; /* Set a max width for the card */
+  }
+
+  footer {
+      text-align: center; /* Center footer text */
+      margin-top: 20px; /* Adjust footer margin */
+  }
+/* Add this CSS to your style.css file for navigation styling */
+  body {
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      text-align: center; /* Center text globally */
+  }
+
+  nav {
+      background-color: #d19c40; /* Match header/footer color */
+      padding: 5px; /* Adjust padding */
+  }
+
+  nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center; /* Center the nav items */
+      margin: 0;
+      padding: 0;
+  }
+
+  nav li {
+      margin: 0 10px; /* Reduce spacing between items */
+  }
+
+  nav a {
+      text-decoration: none; /* Remove underline */
+      color: #fff; /* Link color */
+      font-weight: bold; /* Bold text */
+  }
+
+  nav a:hover {
+      color: #ba7a2a; /* Darker gold on hover */
+      text-decoration: underline; /* Underline on hover */
+  }
+
+  hr {
+      color: lightgray;
+      border-width: 3px;
+  }
+
+  header {
+      margin-top: 10px; /* Adjust header margin */
+  }
+
+  .container {
+      display: flex; /* Enable flexbox */
+      justify-content: center; /* Center content */
+      margin: 10px auto; /* Center the container and adjust margin */
+      max-width: 600px; /* Set a max width for the container */
+  }
+
+  .card {
+      width: 100%; /* Full width of the container */
+      max-width: 400px; /* Set a max width for the card */
+  }
+
+  footer {
+      text-align: center; /* Center footer text */
+      margin-top: 20px; /* Adjust footer margin */
+  }
