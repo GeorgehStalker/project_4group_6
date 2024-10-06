@@ -1,27 +1,35 @@
-Board Game Recommender Project
-Introduction
-Our team has a genuine love for board games and the happiness they bring during family gatherings. George looks forward to game nights with his family, hoping to create screen-free experiences for his kids. Katie enjoys playing with her dad, who boasts an impressive collection of games, while Chris has cherished memories of playing games with both family and friends since childhood. Together, we decided to develop a recommendation system that helps families discover new board games they will enjoy.
+Board Game Recommender System: Analysis and Findings
+Data Insights and Preprocessing
+To develop a recommender system for board games, we first explored a dataset consisting of 10,000 plus games, each with details about categories, mechanics, player numbers, playtime, and ratings. A detailed analysis helped us understand the data and laid the groundwork for the recommender model.
 
-Project Goal
-The primary aim of our project was to create a personalized board game recommendation system tailored to the unique preferences of each family. We focused on several key factors, including age ranges, game categories, playtimes, and game mechanics. By considering these elements, we hope to ensure that our recommendations resonate with various family dynamics and enhance the enjoyment of game nights.
+Key Insights from Data:
+Completeness: The dataset was fully populated with no missing values, ensuring all features were available for modeling.
+Descriptive Analysis:
+The average game allows around 5 players, with a few games designed for large groups (up to 999).
+On average, games have a playtime of roughly 85 minutes, though some games recorded extreme playtimes of up to 60,000 minutes.
+The average user rating sits at 6.43, indicating a positive reception for most games.
+Relationships in the Data:
+The correlation between maximum players and maximum playtime was practically non-existent (-0.0026), suggesting that games with many players don’t necessarily take longer to play.
+A weak correlation (0.0713) was found between minimum players and minimum playtime, indicating a slight tendency for more players to increase game length, but not significantly.
+Building the K-Nearest Neighbors (KNN) Recommender
+Using the cleaned and preprocessed data, we implemented the K-Nearest Neighbors (KNN) algorithm to generate recommendations. The goal was to suggest games similar to those a user already likes by analyzing key attributes such as category, mechanic, playtime, and recommended age.
 
-Exploratory Data Analysis (EDA)
-To kick off our project, we performed exploratory data analysis (EDA) using Python. We began by cleaning the dataset, which involved removing duplicate entries and addressing missing values. By analyzing the distributions of features such as game categories and playtimes, we gathered valuable insights to inform our recommendations. We utilized visualizations with Matplotlib to gain a clearer understanding of the data trends.
+Feature Selection:
+The categories and mechanics were simplified into binned groups to make comparison easier.
+Playtime and age data were normalized to standardize the scales across different features.
+Model Process:
+We used the K-Nearest Neighbors algorithm with k=5 to calculate similarities between games.
+Games that shared the most similar attributes, based on the selected features, were recommended as the closest matches.
+Tableau Dashboards for Visualization
+To provide further insights into user behavior and game features, we created two interactive dashboards using Tableau. These dashboards visualize the relationships between age, playtime, category, and mechanics.
 
-Machine Learning Approach
-Our recommendation system employs the Nearest Neighbors algorithm, which helps identify games that are similar to those preferred by users. We implemented a hybrid approach that combines collaborative filtering, which considers the preferences of similar users, with content-based filtering, which looks at the characteristics of the games, including their categories and mechanics.
-
-To facilitate our workflow, we established a Scikit-Learn pipeline for data preprocessing. This pipeline includes steps for scaling numerical features, encoding categorical variables, and effectively managing missing data. The use of a pipeline allowed us to maintain organization and consistency throughout the process.
-
-Technical Stack
-The technologies we used in our project include:
-
-Python: The primary programming language for our data analysis and modeling tasks.
-Pandas: A library for data manipulation and cleaning.
-Scikit-Learn: Utilized for implementing the Nearest Neighbors algorithm and developing our recommendation system.
-Flask: Employed to create a web application that enables user interaction with our recommendation system.
-Visualizations
-We also developed visualizations to present our findings and demonstrate the effectiveness of our recommendation system. By using Tableau, we created dashboards that showcase important metrics and trends in the board gaming world, making the data more accessible and engaging for users.
-
-Conclusion and Future Work
-In conclusion, our board game recommender system is designed to make it easier for families to find the perfect games, ultimately allowing them to enjoy more quality time together. Looking ahead, we plan to enhance our system by incorporating user feedback for continuous improvement in our recommendations. Additionally, we aim to explore more algorithms to refine the performance of our model further.
+1. Dashboard 1: Age, Category, and Mechanic Preferences
+Purpose: This dashboard visualizes how different age groups gravitate toward certain game categories and mechanics.
+Visualization: A heatmap displays the number of games played by each age group in various categories (like Strategy, Family, Party) and their corresponding mechanic preferences (such as Dice Rolling, Card Drafting).
+Key Takeaways: Players under 18 tend to prefer family and party games, often featuring simpler mechanics like dice rolling. Meanwhile, older players favor strategy games, with more complex mechanics such as resource management and area control.
+2. Dashboard 2: Age and Playtime per Category
+Purpose: This dashboard explores how playtime and category preferences vary with age.
+Visualization: A scatter plot with age on the x-axis and playtime on the y-axis highlights how different categories cater to different age groups. Color-coding by category makes it easy to see which types of games have longer or shorter playtimes.
+Key Takeaways: Games designed for younger players tend to have shorter playtimes, while those aimed at older audiences, like strategy games, often involve longer and more involved gameplay.
+Final Thoughts
+Through a combination of K-Nearest Neighbors for recommendations and Tableau dashboards for visual analysis, we created a comprehensive board game recommendation system. The model effectively analyzes game categories, mechanics, and user preferences to suggest games that users are likely to enjoy. The dashboards further enrich the understanding of how player age affects game preferences in terms of categories, mechanics, and playtime.
